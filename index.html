@@ -48,127 +48,86 @@ border-radius:6px;
 <h1>Suryakanth Portfolio</h1>
 
 <div class="video-grid" id="videoGrid"></div>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Suryakanth Portfolio</title>
-
-<style>
-body{
-font-family: Arial;
-background:#0a0e27;
-color:white;
-margin:0;
-padding:40px;
-}
-
-.video-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-gap:20px;
-}
-
-.video-card{
-background:#151938;
-border-radius:12px;
-overflow:hidden;
-padding:15px;
-}
-
-.video-card img{
-width:100%;
-border-radius:8px;
-}
-
-.view-btn{
-display:inline-block;
-margin-top:10px;
-padding:8px 14px;
-background:#6366f1;
-color:white;
-text-decoration:none;
-border-radius:6px;
-}
-</style>
-</head>
-
-<body>
-
-<h1>Suryakanth Portfolio</h1>
-
-<div class="video-grid" id="videoGrid"></div>
 
 <script>
 const videos = [
+
 {
 title:"AI Content",
 description:"AI-generated visuals and cinematic experiments.",
 link:"https://drive.google.com/drive/folders/15Mku71ThMY1q5_1EEOOhV8XfpQXUiClX",
 thumbnail:"Commercial.png"
-}
-const videos = [
+},
+
 {
 title:"Short-Form Videos",
 description:"High-impact social content optimized for engagement.",
 link:"https://drive.google.com/drive/folders/1BNpXJ-bBKNq2uGIUMMSIvejpwruW9UV_?usp=drive_link",
 thumbnail:"Short-Form Videos.png"
 },
+
 {
 title:"E-Commerce (UGC)",
 description:"Authentic user-generated content style promotional videos.",
 link:"https://drive.google.com/drive/folders/123Fj5seUuidpqNneVe9rqimTyf6MqOy1?usp=drive_link",
 thumbnail:"E-Commerce.png"
 },
+
 {
 title:"Long-Form Videos",
 description:"Structured storytelling with strong pacing and narrative depth.",
 link:"https://drive.google.com/drive/folders/1ddniAQ8OVc-lbDma7Ol-08vKoAJBeJKH?usp=drive_link",
 thumbnail:"Long-Form Videos.png"
 },
+
 {
 title:"Podcast Shorts",
 description:"Dynamic podcast excerpts optimized for engagement.",
 link:"https://drive.google.com/drive/folders/1rT80vOrlxuAG170nEn6tzMRZBXdWtqiZ?usp=drive_link",
 thumbnail:"Podcast shorts.png"
 },
+
 {
 title:"YouTube Channel",
 description:"Curated edits demonstrating diverse YouTube styles.",
 link:"https://drive.google.com/drive/folders/1Et9xiix3dQpCmrs2foQLR4owEdha6Cz8",
 thumbnail:"YouTube Channel.png"
 },
+
 {
 title:"Drama (Live Action)",
 description:"Cinematic edits crafted for emotional impact.",
 link:"https://drive.google.com/drive/folders/1IC1ZouANGMtiDCVrTAsrg4ZXKLbfnOM0?usp=drive_link",
 thumbnail:"Drama(Live action).png"
 },
+
 {
 title:"Commercial",
 description:"High-quality brand promos and ad-ready edits.",
 link:"https://drive.google.com/drive/folders/14dLohIu8KbsKCyfndjklQ7xhnuieD7yc?usp=drive_link",
 thumbnail:"Commercial.png"
 },
+
 {
 title:"Documentary Films",
 description:"Visual storytelling with cinematic documentary structure.",
 link:"https://drive.google.com/drive/folders/1rJpkzzmCdmp-nLOISwYvX5iAM8C4j6E",
 thumbnail:"Documentary Films.png"
 },
+
 {
 title:"Corporate Films",
 description:"Professional brand and corporate communication videos.",
 link:"https://drive.google.com/drive/folders/14-p3qgSqxXICRJH3raWg7P7v1uZfC_s0?usp=drive_link",
 thumbnail:"Corporate Films.png"
 },
+
 {
 title:"Product Videos",
 description:"Clean, modern product showcases for marketing.",
 link:"https://drive.google.com/drive/folders/1RtKClRRrP1smmuM8M1UnKigMYpHtVyhq?usp=drive_link",
 thumbnail:"Product Videos.png"
 }
-];
 
 ];
 
@@ -193,7 +152,5 @@ grid.appendChild(card);
 renderVideos();
 </script>
 
-</body>
-</html>
 </body>
 </html>

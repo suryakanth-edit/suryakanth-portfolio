@@ -5,77 +5,56 @@
 <title>Suryakanth Portfolio</title>
 
 <style>
-*{
+body{
+font-family: Arial, sans-serif;
+background:#0a0e27;
+color:white;
 margin:0;
 padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family: "Segoe UI", Arial, sans-serif;
-background: radial-gradient(circle at top, #111633, #050816);
-color:white;
 }
 
 /* Container */
 .container{
-max-width:1200px;
+max-width:1100px;
 margin:auto;
 padding:40px 20px;
 }
 
-/* HERO */
-.hero{
+/* Profile Section */
+.profile{
 text-align:center;
-padding:50px 20px;
-margin-bottom:50px;
-background:rgba(255,255,255,0.04);
+background:#151938;
+padding:40px;
 border-radius:20px;
-backdrop-filter: blur(8px);
-border:1px solid rgba(255,255,255,0.08);
+margin-bottom:40px;
 }
 
 .profile-pic{
-width:150px;
-height:150px;
+width:140px;
+height:140px;
 border-radius:50%;
 object-fit:cover;
 margin-bottom:15px;
-border:3px solid #6c63ff;
-}
-
-.hero h1{
-font-size:40px;
-margin-bottom:8px;
 }
 
 .role{
-color:#9ca3ff;
-margin-bottom:20px;
+color:#8b5cf6;
+margin:10px 0;
 }
 
 .bio{
 max-width:700px;
-margin:auto;
+margin:15px auto;
 color:#cbd5e1;
 line-height:1.6;
 }
 
 /* Social links */
-.social{
-margin-top:20px;
-}
-
 .social a{
-margin:0 12px;
+margin:0 10px;
 color:white;
 text-decoration:none;
 font-size:14px;
-opacity:0.8;
-}
-
-.social a:hover{
-opacity:1;
 }
 
 /* Stats */
@@ -83,77 +62,48 @@ opacity:1;
 display:flex;
 justify-content:center;
 gap:60px;
-margin-top:30px;
+margin-top:25px;
 }
 
 .stat h2{
 color:#8b5cf6;
-font-size:28px;
+margin:0;
 }
 
-.stat p{
-font-size:13px;
-opacity:0.7;
-}
-
-/* SECTION TITLE */
-.section-title{
-font-size:26px;
-margin-bottom:25px;
-}
-
-/* GRID */
+/* Grid */
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+gap:20px;
 }
 
-/* CARD */
 .video-card{
-background:rgba(255,255,255,0.04);
-border-radius:14px;
+background:#151938;
+border-radius:12px;
 overflow:hidden;
 padding:15px;
-transition:0.35s;
-border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
 }
 
 .video-card:hover{
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 15px 35px rgba(0,0,0,0.6);
+transform:translateY(-6px);
 }
 
 .video-card img{
 width:100%;
-border-radius:10px;
+border-radius:8px;
 margin-bottom:10px;
 }
 
-.video-card h3{
-margin-bottom:6px;
-}
-
-.video-card p{
-font-size:14px;
-opacity:0.8;
-}
-
-/* BUTTON */
 .view-btn{
 display:inline-block;
 margin-top:10px;
-padding:8px 16px;
-background:linear-gradient(135deg,#6366f1,#8b5cf6);
+padding:8px 14px;
+background:#6366f1;
 color:white;
 text-decoration:none;
-border-radius:8px;
+border-radius:6px;
 font-size:14px;
-transition:0.3s;
-}
-
-.view-btn:hover{
-transform:scale(1.05);
 }
 </style>
 </head>
@@ -162,16 +112,18 @@ transform:scale(1.05);
 
 <div class="container">
 
-<!-- HERO -->
-<div class="hero">
+<!-- PROFILE -->
+<div class="profile">
 <img src="surya p.png" class="profile-pic">
 
 <h1>Suryakanth</h1>
 <p class="role">Senior Video Editor</p>
 
 <p class="bio">
-Senior Video Editor with 10+ years of experience in cinematic storytelling,
-commercials, documentaries, and AI-driven content. Delivered projects for
+I’m a Senior Video Editor with 10+ years of experience in media,
+advertising, and branded content. I previously worked at Pocket FM,
+creating cinematic promos for U.S. drama content. Skilled in Premiere Pro,
+After Effects, DaVinci Resolve, and AI workflows. Delivered work for
 Amazon, Accenture, Intel, Infosys, ITC, Tata, and Wipro.
 </p>
 
@@ -186,10 +138,10 @@ Amazon, Accenture, Intel, Infosys, ITC, Tata, and Wipro.
 <div class="stat"><h2>50+</h2><p>Clients</p></div>
 <div class="stat"><h2>10+</h2><p>Years</p></div>
 </div>
+
 </div>
 
-<h2 class="section-title">Portfolio</h2>
-
+<!-- PORTFOLIO GRID -->
 <div class="video-grid" id="videoGrid"></div>
 
 </div>
@@ -213,30 +165,58 @@ thumbnail:"Short-Form Videos.png"
 
 {
 title:"E-Commerce (UGC)",
-description:"Authentic user-generated promotional videos.",
+description:"Authentic user-generated content style promotional videos.",
 link:"https://drive.google.com/drive/folders/123Fj5seUuidpqNneVe9rqimTyf6MqOy1?usp=drive_link",
 thumbnail:"E-Commerce.png"
 },
 
 {
 title:"Long-Form Videos",
-description:"Structured storytelling with strong pacing.",
+description:"Structured storytelling with strong pacing and narrative depth.",
 link:"https://drive.google.com/drive/folders/1ddniAQ8OVc-lbDma7Ol-08vKoAJBeJKH?usp=drive_link",
 thumbnail:"Long-Form Videos.png"
 },
 
 {
 title:"Podcast Shorts",
-description:"Dynamic podcast clips optimized for engagement.",
+description:"Dynamic podcast excerpts optimized for engagement.",
 link:"https://drive.google.com/drive/folders/1rT80vOrlxuAG170nEn6tzMRZBXdWtqiZ?usp=drive_link",
 thumbnail:"Podcast shorts.png"
 },
 
 {
+title:"Drama (Live Action)",
+description:"Cinematic edits crafted for emotional impact.",
+link:"https://drive.google.com/drive/folders/1IC1ZouANGMtiDCVrTAsrg4ZXKLbfnOM0?usp=drive_link",
+thumbnail:"Drama(Live action).png"
+},
+
+{
 title:"Commercial",
-description:"High-quality brand promos and ads.",
+description:"High-quality brand promos and ad-ready edits.",
 link:"https://drive.google.com/drive/folders/14dLohIu8KbsKCyfndjklQ7xhnuieD7yc?usp=drive_link",
 thumbnail:"Commercial.png"
+},
+
+{
+title:"Documentary Films",
+description:"Visual storytelling with cinematic documentary structure.",
+link:"https://drive.google.com/drive/folders/1rJpkzzmCdmp-nLOISwYvX5iAM8C4j6E",
+thumbnail:"Documentary Films.png"
+},
+
+{
+title:"Corporate Films",
+description:"Professional brand and corporate communication videos.",
+link:"https://drive.google.com/drive/folders/14-p3qgSqxXICRJH3raWg7P7v1uZfC_s0?usp=drive_link",
+thumbnail:"Corporate Films.png"
+},
+
+{
+title:"Product Videos",
+description:"Clean, modern product showcases for marketing.",
+link:"https://drive.google.com/drive/folders/1RtKClRRrP1smmuM8M1UnKigMYpHtVyhq?usp=drive_link",
+thumbnail:"Product Videos.png"
 }
 
 ];

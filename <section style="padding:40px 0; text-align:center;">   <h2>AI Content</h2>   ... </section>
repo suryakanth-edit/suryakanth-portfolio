@@ -786,8 +786,8 @@
 },
            {
     title: "Documentary Films",
-    description: "...",
-    link: "...",
+    description: "Visual storytelling with depth, emotion, and cinematic documentary structure.",
+    link: "https://drive.google.com/drive/folders/YOUR_LINK_HERE",
     thumbnail: "Documentary Films.png",
     category: "documentary"
 },
@@ -948,24 +948,6 @@
             }
         });
     </script>
-    <section style="padding:40px 0; text-align:center;">
-  <h2>AI Content</h2>
-
-  <p>Collection of AI-generated visuals, cinematic experiments, and storytelling assets.</p>
-
-  <a href="https://drive.google.com/drive/folders/15Mku71ThMY1q5_1EEOOhV8XfpQXUiClX"
-     target="_blank"
-     style="display:inline-block;
-            padding:12px 24px;
-            background:#111;
-            color:white;
-            text-decoration:none;
-            border-radius:6px;
-            margin-top:15px;">
-     View Collection
-  </a>
-</section>
-
 </body>
 </html>
             

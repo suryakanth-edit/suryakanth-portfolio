@@ -1,953 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suryakanth - Senior Video Editor | Cinematic Storytelling Expert</title>
-    <meta name="description" content="Senior Video Editor with 10+ years of experience in cinematic storytelling, commercial production, and branded content. Worked with Amazon, Intel, Accenture, and more.">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Suryakanth - Senior Video Editor Portfolio">
-    <meta property="og:description" content="Award-winning video editor specializing in cinematic storytelling and branded content with 10+ years experience.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="surya p.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #0a0e27;
-            --bg-secondary: #1a1f3a;
-            --bg-card: #151938;
-            --text-primary: #ffffff;
-            --text-secondary: #b8c1ec;
-            --text-muted: #7c8aaf;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
-            --accent-light: #818cf8;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.25);
-            --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.3);
-        }
-
-        body.light-mode {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
-            --accent-light: #818cf8;
-            --glass-bg: rgba(255, 255, 255, 0.95);
-            --glass-border: rgba(148, 163, 184, 0.2);
-            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-            --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
-            --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
-            --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.2);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: background 0.4s ease, color 0.4s ease;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-            transition: opacity 0.4s ease;
-        }
-
-        body.light-mode::before {
-            background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.03) 0%, transparent 50%);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .theme-toggle {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-primary);
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .theme-toggle:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Hero Section */
-        main {
-            padding-top: 40px;
-        }
-
-        .hero {
-            padding: 60px 0 80px;
-            text-align: center;
-        }
-
-        .profile-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            padding: 60px 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .profile-image {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            padding: 4px;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--bg-primary);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover img {
-            transform: scale(1.05);
-        }
-
-        h1 {
-            font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tagline {
-            font-size: 18px;
-            color: var(--accent);
-            margin-bottom: 32px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .bio {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            margin-top: 48px;
-            padding-top: 40px;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .stat-item {
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 500;
-            margin-top: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            font-size: 18px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 48px;
-        }
-
-        .filter-btn {
-            padding: 10px 24px;
-            border-radius: 50px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover {
-            background: var(--bg-card);
-            color: var(--text-primary);
-            transform: translateY(-2px);
-        }
-
-        .filter-btn.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 32px;
-        }
-
-        .video-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .video-thumbnail {
-            width: 100%;
-            height: 240px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            loading: lazy;
-        }
-
-        .video-card:hover .video-thumbnail img {
-            transform: scale(1.1);
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .video-card:hover .video-overlay {
-            opacity: 1;
-        }
-
-        .overlay-text {
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .video-info {
-            padding: 24px;
-        }
-
-        .video-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .video-description {
-            color: var(--text-secondary);
-            font-size: 14px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .view-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .view-btn:hover {
-            background: var(--accent-hover);
-            transform: translateX(5px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 0 40px;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .footer-cta {
-            margin-bottom: 40px;
-        }
-
-        .footer-cta h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .footer-cta p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 24px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--accent);
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .email-section {
-            margin-bottom: 32px;
-        }
-
-        .email-label {
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .email-display {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            color: var(--text-primary);
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-bottom: 16px;
-        }
-
-        .email-display:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .email-display i {
-            font-size: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .tagline {
-                font-size: 16px;
-            }
-
-            .bio {
-                font-size: 15px;
-            }
-
-            .stats {
-                gap: 40px;
-            }
-
-            .stat-number {
-                font-size: 36px;
-            }
-
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .profile-section {
-                padding: 40px 24px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .filter-buttons {
-                gap: 8px;
-            }
-
-            .filter-btn {
-                font-size: 13px;
-                padding: 8px 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            .theme-toggle span {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">SURYAKANTH</div>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                    <span>Theme</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="profile-section fade-in">
-                    <div class="profile-image">
-                        <img src="surya p.png" alt="Suryakanth - Senior Video Editor Portrait" loading="lazy">
-                    </div>
-                    <h1>Suryakanth</h1>
-                    <p class="tagline">Senior Video Editor</p>
-                    <div class="bio">
-                        I’m a Senior Video Editor with 10+ years of experience in media, advertising, and branded content. I previously worked at Pocket FM, creating cinematic promos for U.S. drama content. I’m skilled in Premiere Pro, After Effects, DaVinci Resolve, and AI-driven workflows, and I’ve delivered work for brands including Amazon, Accenture, Intel, Infosys, ITC, Tata, and Wipro. I combine strong storytelling with technical precision across short-form, long-form, commercial, and documentary projects.
-                    </div>
-
-                    <div class="social-links" style="margin-top: 32px; margin-bottom: 0;">
-                        <a href="https://www.youtube.com/@thestoriesbysurya" target="_blank" class="social-link" title="YouTube Channel" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="http://www.linkedin.com/in/suryakanthfilms" target="_blank" class="social-link" title="LinkedIn Profile" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/thestoriesbysurya/" target="_blank" class="social-link" title="Instagram Profile" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Clients</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Years</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio-section">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <h2 class="section-title">Featured Work</h2>
-                    <p class="section-subtitle">Explore my portfolio across diverse formats and industries</p>
-                </div>
-
-                <div class="filter-buttons" id="filterButtons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="short-form">Short-Form</button>
-                    <button class="filter-btn" data-filter="commercial">Commercial</button>
-                    <button class="filter-btn" data-filter="corporate">Corporate</button>
-                    <button class="filter-btn" data-filter="documentary">Documentary</button>
-                    <button class="filter-btn" data-filter="ugc">UGC</button>
-                    <button class="filter-btn" data-filter="podcast">Podcasts</button>
-                    <button class="filter-btn" data-filter="drama">Drama</button>
-                </div>
-
-                <div class="video-grid" id="videoGrid"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-cta fade-in-up">
-                <h3>Let's Create Something Amazing</h3>
-                <p>Available for freelance projects and full-time collaborations</p>
-                
-                <div class="email-section">
-                    <p class="email-label">Contact Me</p>
-                    <a href="mailto:suryakanthfilms@gmail.com" class="email-display">
-                        <i class="fas fa-envelope"></i>
-                        suryakanthfilms@gmail.com
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@thestoriesbysurya" target="_blank" class="footer-link">YouTube</a>
-                <a href="http://www.linkedin.com/in/suryakanthfilms" target="_blank" class="footer-link">LinkedIn</a>
-                <a href="https://www.instagram.com/thestoriesbysurya/" target="_blank" class="footer-link">Instagram</a>
-            </div>
-
-            <p class="copyright">&copy; 2025 Suryakanth. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Video Portfolio Data
-        const videos = [
-            {
-                title: "Short-Form Videos",
-                description: "High-impact social content optimized for fast engagement and viral potential.",
-                link: "https://drive.google.com/drive/folders/1BNpXJ-bBKNq2uGIUMMSIvejpwruW9UV_?usp=drive_link",
-                thumbnail: "Short-Form Videos.png",
-                category: "short-form"
-            },
-            {
-                title: "E-Commerce (UGC)",
-                description: "Authentic user-generated content style promotional videos for online brands.",
-                link: "https://drive.google.com/drive/folders/123Fj5seUuidpqNneVe9rqimTyf6MqOy1?usp=drive_link",
-                thumbnail: "E-Commerce.png",
-                category: "ugc"
-            },
-            {
-                title: "Long-Form Videos",
-                description: "Structured storytelling with strong pacing, narrative depth, and audience retention.",
-                link: "https://drive.google.com/drive/folders/1ddniAQ8OVc-lbDma7Ol-08vKoAJBeJKH?usp=drive_link",
-                thumbnail: "Long-Form Videos.png",
-                category: "short-form"
-            },
-            {
-                title: "Podcast Shorts",
-                description: "Dynamic podcast excerpts optimized for social shareability and engagement.",
-                link: "https://drive.google.com/drive/folders/1rT80vOrlxuAG170nEn6tzMRZBXdWtqiZ?usp=drive_link",
-                thumbnail: "Podcast shorts.png",
-                category: "podcast"
-            },
-            {
-                title: "YouTube Channel",
-                description: "Curated edits demonstrating diverse YouTube-friendly styles and formats.",
-                link: "https://drive.google.com/drive/folders/1Et9xiix3dQpCmrs2foQLR4owEdha6Cz8",
-                thumbnail: "YouTube Channel.png",
-                category: "short-form"
-            },
-            {
-                title: "Drama (Live Action)",
-                description: "Cinematic edits crafted for emotional impact, performance, and storytelling.",
-                link: "https://drive.google.com/drive/folders/1IC1ZouANGMtiDCVrTAsrg4ZXKLbfnOM0?usp=drive_link",
-                thumbnail: "Drama(Live action).png",
-                category: "drama"
-            },
-            {
-                title: "Commercial",
-                description: "High-quality brand promos and ad-ready commercial edits for major brands.",
-                link: "https://drive.google.com/drive/folders/14dLohIu8KbsKCyfndjklQ7xhnuieD7yc?usp=drive_link",
-                thumbnail: "Commercial.png",
-                category: "commercial"
-},
-           {
-    title: "Documentary Films",
-    description: "Visual storytelling with depth, emotion, and cinematic documentary structure.",
-    link: "https://drive.google.com/drive/u/0/folders/1rJKpkzzmCdmP-nLOISwYvX5iAM8C4j6E",
-    thumbnail: "Documentary Films.png",
-    category: "documentary"
-},
+<script>
+const videos = [
 {
-    title: "AI Content",
-    description: "AI-generated visuals, cinematic experiments, and storytelling assets.",
-    link: "https://drive.google.com/drive/folders/15Mku71ThMY1q5_1EEOOhV8XfpQXUiClX",
-    thumbnail: "AI Content.png",
-    category: "ugc"
+title: "Short-Form Videos",
+description: "High-impact social content optimized for fast engagement and viral potential.",
+link: "https://drive.google.com/drive/folders/1BNpXJ-bBKNq2uGIUMMSIvejpwruW9UV_",
+thumbnail: "Short-Form Videos.png",
+category: "short-form"
 },
 
-            {
-                title: "Corporate Films",
-                description: "Professional brand and corporate communication videos for enterprise clients.",
-                link: "https://drive.google.com/drive/folders/14-p3qgSqxXICRJH3raWg7P7v1uZfC_s0?usp=drive_link",
-                thumbnail: "Corporate Films.png",
-                category: "corporate"
-            },
-            {
-                title: "Product Videos",
-                description: "Clean, modern product showcases designed for marketing and e-commerce.",
-                link: "https://drive.google.com/drive/folders/1RtKClRRrP1smmuM8M1UnKigMYpHtVyhq?usp=drive_link",
-                thumbnail: "Product Videos.png",
-                category: "commercial"
-            }
-        ];
+{
+title: "E-Commerce (UGC)",
+description: "Authentic user-generated content style promotional videos for online brands.",
+link: "https://drive.google.com/drive/folders/123Fj5seUuidpqNneVe9rqimTyf6MqOy1",
+thumbnail: "E-Commerce.png",
+category: "ugc"
+},
 
-        let currentFilter = 'all';
+{
+title: "Long-Form Videos",
+description: "Structured storytelling with strong pacing and narrative depth.",
+link: "https://drive.google.com/drive/folders/1ddniAQ8OVc-lbDma7Ol-08vKoAJBeJKH",
+thumbnail: "Long-Form Videos.png",
+category: "short-form"
+},
 
-        // Render video grid
-        function renderVideos(filter = 'all') {
-            const grid = document.getElementById('videoGrid');
-            const filteredVideos = filter === 'all' 
-                ? videos 
-                : videos.filter(video => video.category === filter);
+{
+title: "Podcast Shorts",
+description: "Dynamic podcast excerpts optimized for engagement.",
+link: "https://drive.google.com/drive/folders/1rT80vOrlxuAG170nEn6tzMRZBXdWtqiZ",
+thumbnail: "Podcast shorts.png",
+category: "podcast"
+},
 
-            grid.innerHTML = filteredVideos.map((video, index) => `
-                <div class="video-card fade-in-up" style="animation-delay: ${index * 0.1}s">
-                    <div class="video-thumbnail">
-                        <img src="${video.thumbnail}" alt="${video.title} - Video editing portfolio sample" loading="lazy">
-                        <div class="video-overlay">
-                            <span class="overlay-text">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">${video.title}</h3>
-                        <p class="video-description">${video.description}</p>
-                        <a href="${video.link}" target="_blank" class="view-btn" rel="noopener noreferrer">
-                            View Works <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            `).join('');
+{
+title: "YouTube Channel",
+description: "Curated edits demonstrating diverse YouTube-friendly styles.",
+link: "https://drive.google.com/drive/folders/1Et9xiix3dQpCmrs2foQLR4owEdha6Cz8",
+thumbnail: "YouTube Channel.png",
+category: "short-form"
+},
 
-            // Re-trigger animations
-            observeElements();
-        }
+{
+title: "Drama (Live Action)",
+description: "Cinematic edits crafted for emotional impact and storytelling.",
+link: "https://drive.google.com/drive/folders/1IC1ZouANGMtiDCVrTAsrg4ZXKLbfnOM0",
+thumbnail: "Drama(Live action).png",
+category: "drama"
+},
 
-        // Filter functionality
-        function setupFilters() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Update active state
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    // Filter videos
-                    const filter = button.getAttribute('data-filter');
-                    currentFilter = filter;
-                    renderVideos(filter);
-                });
-            });
-        }
+{
+title: "Commercial",
+description: "High-quality brand promos and ad-ready edits.",
+link: "https://drive.google.com/drive/folders/14dLohIu8KbsKCyfndjklQ7xhnuieD7yc",
+thumbnail: "Commercial.png",
+category: "commercial"
+},
 
-        // Theme toggle
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const icon = document.querySelector('.theme-toggle i');
-            
-            if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
+{
+title: "Documentary Films",
+description: "Visual storytelling with depth, emotion, and cinematic structure.",
+link: "https://drive.google.com/drive/folders/1rJKpkzzmCdmP-nLOISwyVX5IAM8C4j6E",
+thumbnail: "Documentary Films.png",
+category: "documentary"
+},
 
-        // Load saved theme preference
-        function loadTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const icon = document.querySelector('.theme-toggle i');
-            
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
+{
+title: "AI Content",
+description: "AI-generated visuals, cinematic experiments, and storytelling assets.",
+link: "https://drive.google.com/drive/folders/15Mku71ThMY1q5_1EEOOhV8XfpQXUiClX",
+thumbnail: "AI Content.png",
+category: "ugc"
+},
 
-        // Intersection Observer for scroll animations
-        function observeElements() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
+{
+title: "Corporate Films",
+description: "Professional brand and corporate communication videos.",
+link: "https://drive.google.com/drive/folders/14-p3qgSqxXICRJH3raWg7P7v1uZfC_s0",
+thumbnail: "Corporate Films.png",
+category: "corporate"
+},
 
-            document.querySelectorAll('.fade-in-up').forEach(el => {
-                observer.observe(el);
-            });
-        }
+{
+title: "Product Videos",
+description: "Clean, modern product showcases designed for marketing.",
+link: "https://drive.google.com/drive/folders/1RtKClRRrP1smmuM8M1UnKigMYpHtVyhq",
+thumbnail: "Product Videos.png",
+category: "commercial"
+}
+];
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+function renderVideos(filter="all"){
+const grid=document.getElementById("videoGrid");
+grid.innerHTML="";
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            loadTheme();
-            renderVideos();
-            setupFilters();
-            observeElements();
-        });
+videos
+.filter(v=>filter==="all"||v.category===filter)
+.forEach(video=>{
+const card=document.createElement("div");
+card.className="video-card";
 
-        // Add performance optimization
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    </script>
-</body>
-</html>
-            
+card.innerHTML=`
+<div class="video-thumbnail">
+<img src="${video.thumbnail}" loading="lazy">
+</div>
+<div class="video-info">
+<h3 class="video-title">${video.title}</h3>
+<p class="video-description">${video.description}</p>
+<a href="${video.link}" target="_blank" class="view-btn">View Works</a>
+</div>
+`;
+
+grid.appendChild(card);
+});
+}
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+btn.addEventListener("click",()=>{
+document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+renderVideos(btn.dataset.filter);
+});
+});
+
+document.addEventListener("DOMContentLoaded",()=>{
+renderVideos();
+});
+</script>
